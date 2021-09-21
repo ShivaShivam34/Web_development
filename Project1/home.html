@@ -19,31 +19,41 @@
         });
     </script>
 	<script>
+        var x = document.getElementById("login-form");
+        var y = document.getElementById('main');
+        var z = document.getElementById("profiles");
+
 		function profile(){
-            var x = document.getElementById("login-form");
-            var y = document.getElementById('main');
+           var x = document.getElementById("login-form");
+        var y = document.getElementById('main');
+        var z = document.getElementById("profiles");
 
                 x.style.display = "block";
                 y.style.display = "none";
-
+                z.style.display = "none";
             
 		
 		}
-         function profile2(){
-            var x = document.getElementById("login-form");
-            var y = document.getElementById('main');
 
+        function profile2(){
+            var x = document.getElementById("login-form");
+        var y = document.getElementById('main');
+        var z = document.getElementById("profiles");
             x.style.display = "none";
-            y.style.display= "grid";
+            y.style.display = "grid";
+            z.style.display = "none";
 
 
         }
-        function procfile(){
-            var x = document.getElementById("profile");
-            var y = document.getElementById("main");
 
-            x.style.display = "block";
-            y.style.display= "none";
+        function procfile(){
+            var x = document.getElementById("login-form");
+        var y = document.getElementById('main');
+        var z = document.getElementById("profiles");
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "block";
+
         }
 
 
@@ -54,7 +64,7 @@
     <div>
         <nav>
             
-            <i id="profile-icon" class='fas fa-user-alt' onclick="profile();"></i>
+            <i id="profile-icon" class='fas fa-user-alt' onclick="procfile();"></i>
             
          <!--   <li><button class='loginbtn' onclick="document.getElementById('profile').style.display='block'" style="width:auto;">Login</button></li> -->
 
@@ -66,7 +76,7 @@
                <li><a href="#">About</a></li>
                <li><a href="#">Services</a></li>
                <li><a href="#">Contact</a></li>
-               <li><a class='loginbtn' onclick="procfile();" style="width:auto;">Login</a></li>               
+               <li><a class='loginbtn' onclick="profile();" style="width:auto;">Login</a></li>               
            </ul>
 
            <div id="icon">
@@ -121,7 +131,7 @@
 
     
 <div>
-    <div id="profile" class="card">
+    <div id="profiles" class="card" style="display: none;">
         <div class="profile-box">
 
         <div id="background" class="card-background">
