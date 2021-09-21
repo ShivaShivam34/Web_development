@@ -1,268 +1,415 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="home.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon').click(function(){
-                $('ul').toggleClass('show')
-            });
-
-        });
-    </script>
-	<script>
-        var x = document.getElementById("login-form");
-        var y = document.getElementById('main');
-        var z = document.getElementById("profiles");
-
-		function profile(){
-           var x = document.getElementById("login-form");
-        var y = document.getElementById('main');
-        var z = document.getElementById("profiles");
-
-                x.style.display = "block";
-                y.style.display = "none";
-                z.style.display = "none";
-            
-		
-		}
-
-        function profile2(){
-            var x = document.getElementById("login-form");
-        var y = document.getElementById('main');
-        var z = document.getElementById("profiles");
-            x.style.display = "none";
-            y.style.display = "grid";
-            z.style.display = "none";
-
-
-        }
-
-        function procfile(){
-            var x = document.getElementById("login-form");
-        var y = document.getElementById('main');
-        var z = document.getElementById("profiles");
-            x.style.display = "none";
-            y.style.display = "none";
-            z.style.display = "block";
-
-        }
-
-
-	</script>
-
-</head>
-<body>
-    <div>
-        <nav>
-            
-            <i id="profile-icon" class='fas fa-user-alt' onclick="procfile();"></i>
-            
-         <!--   <li><button class='loginbtn' onclick="document.getElementById('profile').style.display='block'" style="width:auto;">Login</button></li> -->
-
-
-           <label class="logo">Design</label>
-
-           <ul style="z-index: 1222;">
-               <li><a class="active" href="#" onclick="profile2();">Home</a></li>
-               <li><a href="#">About</a></li>
-               <li><a href="#">Services</a></li>
-               <li><a href="#">Contact</a></li>
-               <li><a class='loginbtn' onclick="profile();" style="width:auto;">Login</a></li>               
-           </ul>
-
-           <div id="icon">
-               <i class="fas fa-bars"></i>
-           </div>
-
-        </nav>
-    </div>
-<!-- _______________________________Login_________________________________________________-->
-    <div id='login-form'class='login-page'>
-        <div class="form-box">
-
-            <!----------Toggle-button------>
-            <div class='button-box'>
-                <div id='btn'></div>
-                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
-                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
-            </div>
-
-            <!-------------login----------->
-
-            <form id='login' class='input-group-login'>          
-                <input type='email'class='input-field'placeholder='Email Id' required >
-                <input type='password'class='input-field'placeholder='Enter Password' required>
-                <input type='checkbox'class='check-box'><span class="check-box-text">Remember Password</span>
-                <button type='submit'class='submit-btn'>Login</button>
-            </form>
-
-            <!------------icon--------->
-            <div class="icons">
-                <a href="#"><ion-icon name="logo-facebook"></ion-icon> </a>
-                <a href="#"><ion-icon name="logo-instagram"></ion-icon> </a>
-                <a href="#"><ion-icon name="logo-twitter"></ion-icon> </a>
-                <a href="#"><ion-icon name="logo-google"></ion-icon> </a>
-                <a href="#"><ion-icon name="logo-skype"></ion-icon> </a>
-            </div>
-
-            <!-----------Register--------->
-            <form id='register' class='input-group-register'>
-                <input type='text'class='input-field'placeholder='First Name' required>
-                <input type='text'class='input-field'placeholder='Last Name ' required>
-                <input type='email'class='input-field'placeholder='Email Id' required>
-                <input type='password'class='input-field'placeholder='Enter Password' required>
-                <input type='password'class='input-field'placeholder='Confirm Password'  required>
-                <input type='checkbox'class='check-box'><span class="check-box-text">I agree to the terms and conditions</span>
-                <button type='submit'class='submit-btn'>Register</button>
-            </form>
-
-        </div>
-    </div>
-    <!--________________________________________________________________________________________-->
-
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: Arial;
     
-<div>
-    <div id="profiles" class="card" style="display: none;">
-        <div class="profile-box">
+    background: linear-gradient(to right, rgb(16, 48, 109) , rgb(145, 159, 221));
 
-        <div id="background" class="card-background">
-            <img src="bg.jpg" class="card-image">
-        </div>
-        <div id="info" class="card-info">
-            <h1>Shiva Shivam</h1>
-            <br>
-            <p>Jeena jeena jeena re uda gulal mai teri chunariya laharai</p>
-        </div>
-        <div id="icon" class="card-social-icons">
+}
+nav{
+    height: 70px;
+    width: 100%;
+    background: #34495eb7;
+    /* background: transparent; */
+}
+#profile-icon{
+    color: white;
+    font-size: 40px;
+    margin-left: 5px;
+}
+#profile-icon:hover{
+    color:rgb(119, 140, 197);
+}
+label.logo{
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding: 0 100px;
+    line-height: 80px;
+}
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
 
+nav a{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+a.active,a:hover{
+    color: #180253;
+    transition: .3s;
+    background-color: rgba(246, 253, 252, 0.207);
+}
+nav #icon{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+nav #icon:hover{
+    color:blue;
+}
+@media (max-width:1048px){
+    label.logo{
+        font-size: 32px;
+        padding-left: 60px;
         
-        </div>
-        </div>
-    </div>
-</div>
-<!--______________________________________________________________________________________________-->
-
-    <!---------------card_1------------------>
-<div class="main" id="main">
-    <div class="cards">
-        <div class="image"><img src="bg.jpg"></div>
-        <div class="title"><h1>Title Name</h1></div>
-        <div class="des"><p>Write your title description here.....</p>
-        <button>Read More...</button>
-        </div>
-        
-    </div>
-    <!---------------card_2------------------->
-
-    <div class="cards">
-        <div class="image"><img src="bg.jpg"></div>
-        <div class="title"><h1>Title Name</h1></div>
-        <div class="des"><p>Write your title description here.....</p>
-        <button>Read More...</button>
-        </div>
-        
-    </div>
-
-    <!---------------card_3------------------->
-
-
-
-    <div class="cards">
-        <div class="image"><img src="bg.jpg"></div>
-        <div class="title"><h1>Title Name</h1></div>
-        <div class="des"><p>Write your title description here.....</p>
-        <button>Read More...</button>
-        </div>
-        
-    </div>
-    <!---------------card_4------------------->
-
-
-
-    <div class="cards">
-        <div class="image"><img src="bg.jpg"></div>
-        <div class="title"><h1>Title Name</h1></div>
-        <div class="des"><p>Write your title description here.....</p>
-        <button>Read More...</button>
-        </div>
-        
-    </div>
-
-    <!---------------card_5------------------->
-
-    <div class="cards">
-        <div class="image"><img src="bg.jpg"></div>
-        <div class="title"><h1>Title Name</h1></div>
-        <div class="des"><p>Write your title description here.....</p>
-        <button>Read More...</button>
-        </div>
-        
-    </div>
-
-
-</div>
-
-
-<!--____________________________________________________________________________________________-->
-    <script>
-        var x=document.getElementById('login');
-		var y=document.getElementById('register');
-		var z=document.getElementById('btn');
-		function register()
-		{
-			x.style.left='-400px';
-			y.style.left='50px';
-			z.style.left='110px';
-		}
-		function login()
-		{
-			x.style.left='50px';
-			y.style.left='450px';
-			z.style.left='0px';
-		}
-	</script>
-	<script>
-        var modal = document.getElementById('login-form');
-        window.onclick = function(event) 
-        {
-            if (event.target == modal) 
-            {
-                modal.style.display = "none";
-            }
-        }
-
-
-    </script>
-
-<!------------------------------------------------------>
-
-<script>
-    var modal = document.getElementById('profile');
-    window.onclick = function(event) 
-    {
-        if (event.target == modal) 
-        {
-            modal.style.display = "none";
-        }
     }
-</script>
+    nav ul{
+        margin-right: 20px;
+    }
+    nav a{
+        font-size: 17px;
+    }
 
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+}
+@media(max-width:909px){
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2f3640;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a{
+        font-size: 20px;
+    }
+    a.active,a:hover{
+        border: none;
+        color: #3498db;
+    }
+    nav ul.show{
+        left: 0;
+    }
+
+}
 
 
 
-    <section>
-  
-    </section> 
+
+
+
+
+/* __________________________________Login_&_Register__Page___________________________*/
+
+#login-form
+{
+    display: none;
+}
+.form-box
+{
+    width:380px;
+	height:500px;
+	position:relative;
+	margin:2% auto;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(146, 166, 204) , rgb(51, 66, 133));
+
+	padding:10px;
+    overflow: hidden;
+}
+/*---------Top Button-------------*/
+.button-box
+{
+	width:220px;
+	margin:35px auto;
+	position:relative;
+	box-shadow: 0 0 20px 9px #34495ecb;
+	border-radius: 30px;
     
-</body>
-</html>
+}
+.toggle-btn
+{
+	padding:10px 30px;
+	cursor:pointer;
+    color: white;
+    font-weight: 500;
+    background: transparent;
+
+	border:0;
+	outline: none;
+	position: relative;
+}
+.toggle-btn:hover{
+    color: blue;
+}
+
+#btn
+{
+	top: 0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+    
+	background: #34495ecb;
+	border-radius: 30px;
+	transition: .5s;
+}
+/*------login Part-------*/
+.input-group-login
+{
+	top: 150px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+}
+
+
+.icons{
+    margin:105% 15% 0% 15%;
+    background: #376888;
+    border-radius: 50% 50% 0% 0%;
+}
+.icons a{
+    text-decoration: none;
+    color: white;
+}
+.icons ion-icon{
+    color: white;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+.icons ion-icon:hover{
+    color: #ff7200;
+}
+
+
+
+
+/*-------Register part-------*/
+
+.input-group-register
+{
+    top: 120px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+}
+
+/*-----both login & register part--------*/
+.input-field
+{
+	width: 100%;
+	padding:10px 0;
+    padding-left: 5px;
+	margin: 5px 0;
+    background-color: white;
+	border: 2px solid rgb(151, 155, 160);
+    border-radius: 5px;
+    
+	
+	outline:none;
+	
+}
+.submit-btn
+{
+	width: 85%;
+	padding: 10px 30px;
+    color: white;
+    font-weight: 600;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: #775f86;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+}
+.submit-btn:hover{
+    background-color: rgb(60, 94, 189);
+}
+
+.check-box
+{
+	margin: 30px 10px 34px 0;
+    color: white;
+    
+}
+.check-box-text{
+    color: white;
+}
+span
+{
+	color:#777;
+	font-size:14px;
+	bottom:68px;
+	position:absolute;
+}
+/*-----------------*/
+#login
+{
+	left:50px;
+    font-weight: 300;
+}
+#login input
+{
+    
+	color:black;
+	font-size:15;
+}
+
+.input-group-login input:focus,.input-group-login input:valid{
+    border: 2px solid;
+    border-color: aqua;
+}
+.input-group-register input:focus, .input-group-register input:valid{
+    border: 2px solid aqua;
+}
+#register
+{
+	left:450px;
+}
+#register input
+{
+	color:black;
+	font-size: 15;
+}
+
+/*_________________________________________________________________________*/
+/*______________________________Profile____________________________________*/
+
+#profile
+{
+    display: none;
+}
+
+.profile-box
+{
+    width:350px;
+	height:450px;
+	position:relative;
+	margin: 2% auto;
+    background: linear-gradient(to right, rgb(146, 166, 204) , rgb(51, 66, 133));
+
+	padding:10px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.card-background{
+   background: blue;
+   height: 160px;
+   width: 100%;
+   
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+}
+
+
+.card-image{
+    border-radius: 50%;
+    width: 120px;
+    height: auto;
+    position:relative;
+    top:125px;
+    border : 6px solid  rgb(146, 166, 204) ;
+    
+   
+}
+
+.card .card-info{
+    margin-top: 80px;
+    padding: 10px;
+   
+}
+
+/*_________________________________Home_________________________________________*/
+
+/*______________________________Cards_______________________________________*/
+
+.main{
+    font-family: Arial;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin:20px;
+    
+}
+.main .cards{ 
+    
+    
+    background: linear-gradient(to right, rgb(146, 166, 204) , rgb(51, 66, 133));
+
+    border-radius: 10px;
+}
+.main .cards:hover{
+    box-shadow: 2px 5px 10px rgb(229, 229, 233);
+}
+.main .cards .image img{
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+}
+.main .cards .title{
+    text-align: center;
+    padding: 5px;
+}
+.main .cards .des{
+    text-align: center;
+    padding: 4px;
+}
+.main .cards button{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgb(164, 177, 250);
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 7.5px;
+    cursor: pointer;
+}
+.main .cards button:hover{
+    background-color: rgb(24, 4, 61);
+    color: white;
+    transition: .2s;
+    
+}
+
+
+@media (max-width:1200px){
+    .main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media(max-width:700px){
+    .main{
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+/*________________________________________________________________*/
+
+
+
